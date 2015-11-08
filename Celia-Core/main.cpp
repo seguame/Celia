@@ -10,7 +10,7 @@ int main(void)
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
-	while (!window.closed())
+	while ( !window.closed() )
 	{
 		//std::cout << window.getWidth() << ", " << window.getHeight() << std::endl;
 
