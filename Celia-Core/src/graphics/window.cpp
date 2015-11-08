@@ -30,7 +30,7 @@ namespace celia { namespace graphics {
 			return false;
 		} 
 
-		m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
+		m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, nullptr, nullptr);
 		
 		if ( !m_Window ) 
 		{
