@@ -1,3 +1,4 @@
+#include <iostream>
 #include "src\graphics\window.h"
 
 int main(void) 
