@@ -7,9 +7,9 @@ namespace celia { namespace graphics {
 
 	Window::Window(const char *name, int width, int height) 
 	{
-		m_Title		= name;
-		m_Width		= width;
-		m_Height	= height;
+		m_title		= name;
+		m_width		= width;
+		m_height	= height;
 
 		if ( !init() )
 		{
@@ -30,17 +30,17 @@ namespace celia { namespace graphics {
 			return false;
 		} 
 
-		m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, nullptr, nullptr);
+		m_window = glfwCreateWindow(m_width, m_height, m_title, nullptr, nullptr);
 		
-		if ( !m_Window ) 
+		if ( !m_window ) 
 		{
 			glfwTerminate();
 			std::cout << "Failed to create new Window" << std::endl;
 			return false;
 		}
 
-		glfwMakeContextCurrent(m_Window);
-		glfwSetWindowSizeCallback(m_Window, windowResize);
+		glfwMakeContextCurrent(m_window);
+		glfwSetWindowSizeCallback(m_window, windowResize);
 
 		if ( glewInit() != GLEW_OK )
 		{
@@ -53,7 +53,7 @@ namespace celia { namespace graphics {
 
 	bool Window::closed() const
 	{
-		return glfwWindowShouldClose(m_Window) == 1;
+		return glfwWindowShouldClose(m_window) == 1;
 	}
 
 	void Window::clear() const
@@ -64,17 +64,17 @@ namespace celia { namespace graphics {
 	void Window::update()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		glfwSwapBuffers(m_window);
 	}
 
 	int Window::getWidth() const 
 	{
-		return m_Width; 
+		return m_width; 
 	}
 
 	int Window::getHeight() const 
 	{ 
-		return m_Height; 
+		return m_height; 
 	}
 
 

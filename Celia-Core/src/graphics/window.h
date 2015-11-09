@@ -5,6 +5,8 @@
 
 namespace celia { namespace graphics {
 
+#define MAX_KEYS 1024
+
 	class Window
 	{
 	public:
@@ -21,9 +23,9 @@ namespace celia { namespace graphics {
 		bool init();
 
 		//Variables
-		const char *m_Title;
-		int m_Width, m_Height;
-		GLFWwindow *m_Window;
-		bool m_Closed;
+		const char *m_title;
+		int m_width, m_height;
+		GLFWwindow *m_window;
+		bool m_closed;
 	};
 } }
