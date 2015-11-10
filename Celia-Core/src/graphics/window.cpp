@@ -3,8 +3,6 @@
 
 namespace celia { namespace graphics {
 
-	void windowResize(GLFWwindow *window, int width, int height);
-
 	Window::Window(const char *name, int width, int height) 
 	{
 		m_title		= name;
@@ -40,7 +38,12 @@ namespace celia { namespace graphics {
 		}
 
 		glfwMakeContextCurrent(m_window);
-		glfwSetWindowSizeCallback(m_window, windowResize);
+		glfwSetWindowUserPointer(m_window, this);
+
+		glfwSetWindowSizeCallback(m_window, cbWindowResize);
+		glfwSetKeyCallback(m_window, cbKeyboard);
+		glfwSetMouseButtonCallback(m_window, cbMouseClicks);
+		glfwSetCursorPosCallback(m_window, cbMouseMovement);
 
 		if ( glewInit() != GLEW_OK )
 		{
@@ -79,8 +82,26 @@ namespace celia { namespace graphics {
 
 
 	//CALLBACKS
-	void windowResize(GLFWwindow *window, int width, int height)
+	void cbWindowResize(GLFWwindow *window, int width, int height)
 	{
 		glViewport(0, 0, width, height);
+	}
+
+	void cbKeyboard(GLFWwindow *window, int key, int scancode, int action, int mods)
+	{
+		input::Keyboard::GetInstance().setKeyState(key, action != GLFW_RELEASE);
+	}
+
+	void cbMouseClicks(GLFWwindow *window, int button, int action, int mods)
+	{
+		input::Mouse::GetInstance().setButtonState(button, action != GLFW_RELEASE);
+	}
+
+	void cbMouseMovement(GLFWwindow *window, double xpos, double ypos)
+	{
+		input::Mouse& mouse = input::Mouse::GetInstance();
+
+		mouse.setX(xpos);
+		mouse.setY(ypos);
 	}
 }}

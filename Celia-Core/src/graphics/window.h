@@ -2,6 +2,7 @@
 
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
+#include "..\input\input.h"
 
 namespace celia { namespace graphics {
 
@@ -21,6 +22,12 @@ namespace celia { namespace graphics {
 	private:
 		//Functions
 		bool init();
+
+		//Callbacks
+		friend static void cbWindowResize(GLFWwindow *window, int width, int height);
+		friend static void cbKeyboard(GLFWwindow *window, int key, int scancode, int action, int mods);
+		friend static void cbMouseClicks(GLFWwindow *window, int button, int action, int mods);
+		friend static void cbMouseMovement(GLFWwindow *window, double xpos, double ypos);
 
 		//Variables
 		const char *m_title;
