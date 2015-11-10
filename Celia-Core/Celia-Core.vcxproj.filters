@@ -21,9 +21,15 @@
     <ClCompile Include="src\graphics\window.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="src\input\input.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\graphics\window.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
