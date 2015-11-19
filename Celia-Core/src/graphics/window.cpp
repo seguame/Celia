@@ -20,7 +20,7 @@ namespace celia { namespace graphics {
 		glfwTerminate();
 	}
 
-	bool Window::init() 
+	bool Window::init( void ) 
 	{
 		if ( !glfwInit() )
 		{

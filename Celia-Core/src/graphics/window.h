@@ -21,7 +21,7 @@ namespace celia { namespace graphics {
 
 	private:
 		//Functions
-		bool init();
+		bool init( void );
 
 		//Callbacks
 		friend static void cbWindowResize(GLFWwindow *window, int width, int height);

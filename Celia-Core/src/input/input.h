@@ -8,7 +8,7 @@ namespace celia { namespace input {
 	class Mouse
 	{
 	public:
-		static Mouse& GetInstance();
+		static Mouse& GetInstance( void );
 
 		inline double getX() const { return m_mx; }
 		inline double getY() const { return m_my; };
@@ -18,7 +18,7 @@ namespace celia { namespace input {
 		inline bool is_pressed(unsigned int button) const { return m_buttons[button]; };
 
 	private:
-		Mouse();
+		Mouse( void );
 
 	private:
 		static Mouse m_instance;
@@ -31,13 +31,13 @@ namespace celia { namespace input {
 	class Keyboard
 	{
 	public:
-		static Keyboard& GetInstance();
+		static Keyboard& GetInstance( void );
 
 		inline void setKeyState(unsigned int key, bool state) { m_keys[key] = state;}
 		inline bool is_pressed(unsigned int key) const { return m_keys[key]; }
 
 	private:
-		Keyboard();
+		Keyboard( void );
 
 	private:
 		static Keyboard m_instance;

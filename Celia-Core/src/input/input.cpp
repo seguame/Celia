@@ -5,12 +5,12 @@ namespace celia { namespace input {
 	// Setup the mouse singleton.
 	Mouse Mouse::m_instance;
 
-	Mouse& Mouse::GetInstance()
+	Mouse& Mouse::GetInstance( void )
 	{
 		return Mouse::m_instance;
 	}
 
-	Mouse::Mouse()
+	Mouse::Mouse( void )
 	{
 		for (int i = 0; i < MAX_BUTTONS; ++i)
 		{
@@ -22,12 +22,12 @@ namespace celia { namespace input {
 	// Setup the keyboard singleton.
 	Keyboard Keyboard::m_instance;
 
-	Keyboard& Keyboard::GetInstance()
+	Keyboard& Keyboard::GetInstance( void )
 	{
 		return Keyboard::m_instance;
 	}
 
-	Keyboard::Keyboard()
+	Keyboard::Keyboard( void )
 	{
 		for (int i = 0; i < MAX_KEYS; ++i)
 		{
